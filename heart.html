@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Prashanth! 💖</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Great+Vibes&family=Parisienne&family=Poppins:wght@300;400;500&family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #f0e6ff;
+            min-height: 100vh;
+            overflow-x: hidden;
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="%23ff85a2" d="M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402m5.726-20.583c-2.203 0-4.446 1.042-5.726 3.238-1.285-2.206-3.522-3.248-5.719-3.248-3.183 0-6.281 2.187-6.281 6.191 0 4.661 5.571 9.429 12 15.809 6.43-6.38 12-11.148 12-15.809 0-4.011-3.095-6.181-6.274-6.181"/></svg>'), auto;
+        }
+
+        .stage {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Animated Backgrounds */
+        .stage-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -3;
+        }
+
+        /* Stage 1 Background */
+        #stage1 .stage-bg {
+            background: linear-gradient(-45deg, #1a1a2e, #16213e, #0f3460, #533483);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+        }
+
+        /* Stage 2 Background */
+        #stage2 .stage-bg {
+            background: linear-gradient(-45deg, #2c003e, #512b58, #6a097d, #c060a1);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+        }
+
+        /* Stage 3 Background */
+        #stage3 .stage-bg {
+            background: linear-gradient(-45deg, #6a0dad, #8a2be2, #da70d6, #ff69b4);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+        }
+
+        /* Stage 4 Background - NEW ROMANTIC PEACH/PINK THEME */
+        #stage4 .stage-bg {
+            background: linear-gradient(-45deg, #ffafbd, #ffc3a0, #ffd3b6, #ffaaa5);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+        }
+
+        /* Final Message Background */
+        #final-message .stage-bg {
+            background: linear-gradient(-45deg, #6a11cb, #2575fc, #ff6b6b, #ffa8a8);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Stars Background */
+        .stars-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            overflow: hidden;
+        }
+
+        .star {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            animation: twinkle 5s infinite;
+        }
+
+        @keyframes twinkle {
+            0% { opacity: 0.2; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+            100% { opacity: 0.2; transform: scale(1); }
+        }
+
+        /* Shooting Stars */
+        .shooting-star {
+            position: absolute;
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+            transform: rotate(-45deg);
+            animation: shootingStar 3s linear infinite;
+            opacity: 0;
+        }
+
+        @keyframes shootingStar {
+            0% { transform: translateX(0) translateY(0) rotate(-45deg); opacity: 0; }
+            10% { opacity: 1; }
+            100% { transform: translateX(500px) translateY(500px) rotate(-45deg); opacity: 0; }
+        }
+
+        /* Floating Hearts */
+        .floating-hearts {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .floating-heart {
+            position: absolute;
+            font-size: 20px;
+            color: #ff85a2;
+            animation: float 3s ease-in-out infinite;
+            opacity: 0.7;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(10deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+
+        /* Stage 1: Heart Lock */
+        #stage1 {
+            background: transparent;
+        }
+
+        .heart-container {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 30px;
+            animation: heartbeat 1.5s ease-in-out infinite, float 6s ease-in-out infinite;
+        }
+
+        .heart {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #ff85a2, #ff477e);
+            transform: rotate(45deg);
+            border-radius: 50% 0 0 50%;
+            box-shadow: 0 0 30px rgba(255, 133, 162, 0.7);
+        }
+
+        .heart:before, .heart:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: inherit;
+            border-radius: 50%;
+        }
+
+        .heart:before {
+            top: -50%;
+            left: 0;
+        }
+
+        .heart:after {
+            top: 0;
+            left: -50%;
+        }
+
+        .lock {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background: #f8f1ff;
+            border-radius: 10px;
+            z-index: 10;
+            box-shadow: 0 0 15px rgba(248, 241, 255, 0.5);
+        }
+
+        .lock:before {
+            content: '';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 20px;
+            background: #f8f1ff;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .password-container {
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .password-input {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 50px;
+            width: 300px;
+            font-size: 16px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.15);
+            color: #f0e6ff;
+            border: 2px solid #ff85a2;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            outline: none;
+            transition: all 0.3s;
+            backdrop-filter: blur(5px);
+        }
+
+        .password-input:focus {
+            box-shadow: 0 5px 15px rgba(255, 133, 162, 0.5);
+            border-color: #ff477e;
+        }
+
+        .submit-btn {
+            background: linear-gradient(45deg, #ff85a2, #ff477e);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 15px;
+            box-shadow: 0 5px 15px rgba(255, 133, 162, 0.4);
+            transition: all 0.3s;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 133, 162, 0.6);
+        }
+
+        .message {
+            margin-top: 20px;
+            font-size: 18px;
+            min-height: 30px;
+            font-weight: 500;
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        /* Stage 2: Love Quiz */
+        #stage2 {
+            background: transparent;
+            display: none;
+        }
+
+        .quiz-container {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 133, 162, 0.3);
+            max-width: 700px;
+            width: 90%;
+        }
+
+        .quiz-title {
+            text-align: center;
+            font-family: 'Dancing Script', cursive;
+            font-size: 36px;
+            color: #ffb8d9;
+            margin-bottom: 20px;
+        }
+
+        .question {
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 133, 162, 0.2);
+        }
+
+        .question-text {
+            font-size: 18px;
+            margin-bottom: 15px;
+            font-weight: 500;
+            color: #f0e6ff;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .option {
+            padding: 12px 15px;
+            background: rgba(255, 133, 162, 0.1);
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 1px solid transparent;
+        }
+
+        .option:hover {
+            background: rgba(255, 133, 162, 0.2);
+            border: 1px solid rgba(255, 133, 162, 0.5);
+        }
+
+        .option.selected {
+            background: rgba(255, 133, 162, 0.3);
+            border: 1px solid #ff85a2;
+        }
+
+        .quiz-nav {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .quiz-btn {
+            padding: 12px 30px;
+            background: linear-gradient(45deg, #ff85a2, #ff477e);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(255, 133, 162, 0.4);
+            transition: all 0.3s;
+        }
+
+        .quiz-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 133, 162, 0.6);
+        }
+
+        .quiz-btn:disabled {
+            background: rgba(255, 255, 255, 0.2);
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .question-counter {
+            text-align: center;
+            margin-top: 10px;
+            color: #ffb8d9;
+            font-size: 14px;
+        }
+
+        /* Stage 3: Love Letter */
+        #stage3 {
+            background: transparent;
+            display: none;
+        }
+
+        .letter-wrapper {
+            max-width: 700px;
+            width: 90%;
+            padding: 40px;
+            /* Romantic vintage paper background */
+            background: linear-gradient(135deg, #f9f0d2 0%, #e8d9b0 100%);
+            border-radius: 10px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            position: relative;
+            border: 8px double #c19a6b;
+            overflow: hidden;
+        }
+
+        .letter-wrapper:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            /* Vintage paper texture */
+            background-image: 
+                radial-gradient(circle at 100% 150%, #f9f0d2 24%, white 25%, white 28%, #f9f0d2 29%, #f9f0d2 36%, white 36%, white 40%, transparent 40%, transparent),
+                radial-gradient(circle at 0  150%, #f9f0d2 24%, white 25%, white 28%, #f9f0d2 29%, #f9f0d2 36%, white 36%, white 40%, transparent 40%, transparent),
+                radial-gradient(circle at 50% 100%, white 10%, #f9f0d2 11%, #f9f0d2 23%, white 24%, white 30%, #f9f0d2 31%, #f9f0d2 43%, white 44%, white 50%, #f9f0d2 51%, #f9f0d2 63%, white 64%, white 71%, transparent 71%, transparent),
+                radial-gradient(circle at 100% 50%, white 5%, #f9f0d2 6%, #f9f0d2 15%, white 16%, white 20%, #f9f0d2 21%, #f9f0d2 30%, white 31%, white 35%, #f9f0d2 36%, #f9f0d2 45%, white 46%, white 49%, transparent 50%, transparent),
+                radial-gradient(circle at 0  50%, white 5%, #f9f0d2 6%, #f9f0d2 15%, white 16%, white 20%, #f9f0d2 21%, #f9f0d2 30%, white 31%, white 35%, #f9f0d2 36%, #f9f0d2 45%, white 46%, white 49%, transparent 50%, transparent);
+            background-size: 100px 50px;
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        .letter-content {
+            font-family: 'Cinzel', serif;
+            font-size: 16px;
+            line-height: 1.8;
+            color: #5d4037;
+            text-align: justify;
+            position: relative;
+            z-index: 2;
+            max-height: 60vh;
+            overflow-y: auto;
+            padding-right: 10px;
+        }
+
+        /* Custom scrollbar for letter */
+        .letter-content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .letter-content::-webkit-scrollbar-track {
+            background: rgba(193, 154, 107, 0.2);
+            border-radius: 4px;
+        }
+
+        .letter-content::-webkit-scrollbar-thumb {
+            background: #c19a6b;
+            border-radius: 4px;
+        }
+
+        .letter-header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #c19a6b;
+            padding-bottom: 15px;
+        }
+
+        .letter-date {
+            font-family: 'Great Vibes', cursive;
+            font-size: 20px;
+            color: #8d6e63;
+            margin-top: 10px;
+        }
+
+        .letter-signature {
+            text-align: right;
+            margin-top: 40px;
+            font-family: 'Parisienne', cursive;
+            font-size: 28px;
+            color: #8d6e63;
+        }
+
+        .next-btn {
+            display: block;
+            margin: 20px auto 0;
+            padding: 12px 30px;
+            background: linear-gradient(45deg, #c19a6b, #8d6e63);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(193, 154, 107, 0.4);
+            transition: all 0.3s;
+        }
+
+        .next-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(193, 154, 107, 0.6);
+        }
+
+        /* Stage 4: Memory Gallery - ENHANCED WITH IMAGES */
+        #stage4 {
+            background: transparent;
+            display: none;
+        }
+
+        .gallery-title {
+            text-align: center;
+            font-family: 'Dancing Script', cursive;
+            font-size: 42px;
+            color: #ff6b95;
+            margin-bottom: 40px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            width: 90%;
+        }
+
+        .memory-card {
+            height: 350px;
+            perspective: 1000px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .memory-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+            cursor: pointer;
+        }
+
+        .memory-card.flipped .memory-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .memory-card-front, .memory-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: 20px;
+            display: flex;
+            align-items: center; /* Center horizontally */
+            justify-content: center; /* Center vertically */
+            flex-direction: column;
+            padding: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Memory card front with images */
+        .memory-card-front {
+            background-size: cover;
+            background-position: center;
+            color: white;
+            font-family: 'Dancing Script', cursive;
+            font-size: 28px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .memory-card-front::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+        
+        /* FIX: Ensure front text is not mirrored */
+        .memory-card-front > * {
+            position: relative;
+            z-index: 2;
+            transform: rotateY(0deg); 
+        }
+
+        .memory-title {
+            font-size: 32px;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .memory-icon {
+            font-size: 60px;
+            margin-bottom: 15px;
+            filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+        }
+
+        .memory-card-back {
+            background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
+            /* FORCED CONTRAST & CENTERING */
+            color: #000000; 
+            transform: rotateY(180deg);
+            font-family: 'Great Vibes', cursive;
+            font-size: 28px; 
+            text-align: center;
+            padding: 30px 20px;
+            overflow-y: auto;
+        }
+        
+        /* FIX: Counter-rotate text content inside the flipped backface (180 + 180 = 360/0deg) */
+        .memory-card-back p {
+             font-size: 24px;
+             color: #000000;
+             margin-bottom: 10px;
+             /* THIS FIXES THE BACKWARD TEXT */
+             transform: rotateY(180deg); 
+        }
+
+        .memory-description {
+            font-family: 'Poppins', sans-serif;
+            font-size: 18px; 
+            line-height: 1.6; 
+            margin-top: 15px;
+            color: #000000; 
+            /* THIS FIXES THE BACKWARD TEXT */
+            transform: rotateY(180deg); 
+        }
+
+        /* Final Message - ENHANCED */
+        #final-message {
+            text-align: center;
+            padding: 50px 20px;
+            display: none;
+            animation: fadeIn 2s ease;
+            background: transparent;
+            min-height: 100vh;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .final-text {
+            font-family: 'Dancing Script', cursive;
+            font-size: 42px;
+            color: #ff6b95;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .final-subtext {
+            font-size: 20px;
+            color: #f0e6ff;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .quote {
+            font-family: 'Great Vibes', cursive;
+            font-size: 26px;
+            color: #ffb8d9;
+            margin: 30px 0;
+            font-style: italic;
+        }
+
+        /* Animations */
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .password-input {
+                width: 100%;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .letter-content {
+                font-size: 14px;
+            }
+            
+            .quiz-container {
+                padding: 20px;
+            }
+            
+            .gallery-title {
+                font-size: 36px;
+            }
+            
+            .memory-card {
+                height: 300px;
+            }
+            
+            .final-text {
+                font-size: 36px;
+            }
+            
+            .final-subtext {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Stage 1: Heart Lock -->
+    <section id="stage1" class="stage">
+        <div class="stage-bg"></div>
+        <div class="stars-container" id="stars1"></div>
+        <div class="floating-hearts" id="hearts1"></div>
+        <div class="shooting-stars" id="shooting1"></div>
+        
+        <div class="heart-container">
+            <div class="heart"></div>
+            <div class="lock"></div>
+        </div>
+        <h1 style="font-family: 'Dancing Script', cursive; font-size: 42px; color: #ffb8d9; margin-bottom: 10px; text-align: center;">Happy Birthday Prashanth! 💖</h1>
+        <p style="font-size: 18px; margin-bottom: 20px; text-align: center;">Enter our special date to unlock my heart 💌</p>
+        
+        <div class="password-container">
+            <input type="text" class="password-input" id="password-input" placeholder="Type our special date...">
+            <br>
+            <button class="submit-btn" id="unlock-btn">Unlock My Heart</button>
+        </div>
+        
+        <div class="message" id="lock-message"></div>
+    </section>
+    
+    <!-- Stage 2: Love Quiz -->
+    <section id="stage2" class="stage">
+        <div class="stage-bg"></div>
+        <div class="stars-container" id="stars2"></div>
+        <div class="floating-hearts" id="hearts2"></div>
+        <div class="shooting-stars" id="shooting2"></div>
+        
+        <div class="quiz-container">
+            <h2 class="quiz-title">How Well Do You Know Me?</h2>
+            <div id="quiz-questions">
+                <!-- Questions will be inserted here by JavaScript -->
+            </div>
+            <div class="quiz-nav">
+                <button class="quiz-btn" id="prev-btn" disabled>Previous</button>
+                <button class="quiz-btn" id="next-btn">Next</button>
+            </div>
+            <div class="question-counter" id="question-counter">Question 1 of 5</div>
+            <div class="message" id="quiz-result"></div>
+        </div>
+    </section>
+    
+    <!-- Stage 3: Love Letter -->
+    <section id="stage3" class="stage">
+        <div class="stage-bg"></div>
+        <div class="stars-container" id="stars3"></div>
+        <div class="floating-hearts" id="hearts3"></div>
+        <div class="shooting-stars" id="shooting3"></div>
+        
+        <div class="letter-wrapper">
+            <div class="letter-header">
+                <h2 style="font-family: 'Cinzel', serif; color: #8d6e63;">My Dearest Prashanth</h2>
+                <div class="letter-date">🎂 Happy Birthday, My Love 💌</div>
+            </div>
+            <div class="letter-content">
+                <p>Happy Birthday to the one who makes my world brighter just by being in it 💖</p>
+                
+                <p>I can't believe it's been since 2021 — all these years filled with laughs 😄, fights 😤, hugs 🤗, and the kind of memories that I'll always carry with me. You've become such a big part of my life that even my most random thoughts somehow circle back to you 💭❤.</p>
+                
+                <p>Do you remember our first date? 🥰 I still smile every time I think about it — how I was both nervous and excited 😅, trying to act normal while my heart was literally doing backflips 💓. That day was the start of something so special… something that only kept growing stronger with time 🌸. You've always known how to make me laugh, even when I'm angry with you (which is so unfair 😜). Every moment with you — even the small, silly ones — feels like a memory I never want to lose 🫶.</p>
+                
+                <p>There was a time recently when we weren't talking 😔 — after that big fight, for almost a week. I never expected you to come all the way to Hyderabad just for me 🥹. When I saw you, I was literally shocked — my heart didn't know how to react 💓. I tried to stay angry 😠, I really did, but the second I looked at you, all that anger just melted away 💞. That moment reminded me that no matter how much we fight or drift apart, we always find our way back to each other 👫.</p>
+                
+                <p>And my absolute favorite memory — our bike rides 🏍💨. It's my most loved feeling in the world 🌈. Every time we go out on the bike together, I enjoy it more than words can say 🥹. When you handle the traffic so carefully, I sit behind you, smiling 😊, sometimes dozing off 😴, sometimes just holding you tight 🤗. That closeness, that comfort — it feels like my whole world is right there, in that moment, with you ❤.</p>
+                
+                <p>When we're together, you turn into such a little baby 😅👶 — the way you act, the way you talk, the way you rest your head on my shoulder every time you're sleepy 💤. It's funny and adorable and somehow makes me love you even more 💗.</p>
+                
+                <p>When we're together, we fight like kids 🙈, scold each other 😜, cook together 🍳, laugh over nothing 😂, and sometimes just fall asleep next to each other 💑 — and every time I sleep beside you, I drift off so peacefully 😴, like my soul finally feels safe 🕊. Those moments make me feel like we're already living the life we dream of 💍 — like we're already married in some quiet, beautiful way 🏡. And I pray that one day, it really happens — that this bond, this love, never ends 💫.</p>
+                
+                <p>So here's to you — my favorite person 💕, my biggest headache 🤦‍♀, my peace 🌿, and my happiness 🌞. I love you more than I can ever say in words, and more than you'll ever fully understand 💖.</p>
+                
+                <div class="letter-signature">
+                    Forever yours,<br>
+                    With all my heart,<br>
+                    Somili 🌸💌
+                </div>
+            </div>
+        </div>
+        <button class="next-btn" id="letter-next">Discover Our Memories</button>
+    </section>
+    
+    <!-- Stage 4: Memory Gallery - ENHANCED WITH IMAGES -->
+    <section id="stage4" class="stage">
+        <div class="stage-bg"></div>
+        <div class="stars-container" id="stars4"></div>
+        <div class="floating-hearts" id="hearts4"></div>
+        <div class="shooting-stars" id="shooting4"></div>
+        
+        <h2 class="gallery-title">Our Starlit Memories</h2>
+        <div class="gallery-grid">
+            <div class="memory-card" id="card1">
+                <div class="memory-card-inner">
+                    <!-- Image Link 1 -->
+                    <div class="memory-card-front" style="background-image: url('https://dhwaniastro.com/public/cms-images/blog-images/1889632559_Screenshot%202023-10-20%20172638.png');">
+                        <div class="memory-icon">💬</div>
+                        <div class="memory-title">Long Distance & Online Days</div>
+                        <p style="font-size: 15px; margin-top: 10px;">From long-distance chats to endless late-night talks 💬💞
+We started as strangers, became friends, best friends…
+and then slowly turned into something so beautiful 💕
+Even though we were miles apart, my heart was always with you 💫
+Waiting to meet you felt like forever — and I missed you every single day 🥺</p>
+                    </div>
+                    <div class="memory-card-back">
+                        <p>The Start of Forever</p>
+                        <p style="font-size: 15px; margin-top: 10px;">From long-distance chats to endless late-night talks 💬💞. We started as strangers, became friends, best friends… and then slowly turned into something so beautiful 💕. Even though we were miles apart, my heart was always with you 💫. Waiting to meet you felt like forever — and I missed you every single day 🥺💌</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="memory-card" id="card2">
+                <div class="memory-card-inner">
+                    <!-- Image Link 2 -->
+                    <div class="memory-card-front" style="background-image: url('https://wallpapercave.com/wp/wp11494368.jpg');">
+                        <div class="memory-icon">💖</div>
+                        <div class="memory-title">Finally Meeting</div>
+                        <p style="font-size: 15px; margin-top: 10px;">And finally… we met 🥰💖
+Those moments felt unreal — like all my waiting was worth it ✨
+Now we make it a point to meet whenever we can,
+at least twice a month, just to laugh, talk, and create memories together 💕
+Every second with you feels like magic 🌈💞
+</p>
+                    </div>
+                    <div class="memory-card-back">
+                        <p>The Best Day Ever</p>
+                        <p class="memory-description">And finally… we met 🥰💖. Those moments felt unreal — like all my waiting was worth it ✨. Now we make it a point to meet whenever we can, at least twice a month, just to laugh, talk, and create memories together 💕. Every second with you feels like magic 🌈💞</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="memory-card" id="card3">
+                <div class="memory-card-inner">
+                    <!-- Image Link 3 -->
+                    <div class="memory-card-front" style="background-image: url('https://static.vecteezy.com/system/resources/previews/047/393/726/non_2x/continuous-one-line-drawing-of-a-wedding-couple-illustration-vector.jpg');">
+                        <div class="memory-icon">💍</div>
+                        <div class="memory-title">My Dream</div>
+                        <p style="font-size: 15px; margin-top: 10px;">My dream? Simple yet everything to me 💭💍
+To marry the one who's been my best friend, my peace, my person ❤
+I imagine our future together — full of love, laughter, and little fights 😅
+One day, I'll look at you and say… "We made it." 💖✨
+</p>
+                    </div>
+                    <div class="memory-card-back">
+                        <p>Our Future Together</p>
+                        <p class="memory-description">My dream? Simple yet everything to me 💭💍. To marry the one who's been my best friend, my peace, my person ❤. I imagine our future together — full of love, laughter, and little fights 😅. One day, I'll look at you and say… "We made it." 💖✨</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Final Message - ENHANCED -->
+    <section id="final-message" class="stage">
+        <div class="stage-bg"></div>
+        <div class="stars-container" id="stars5"></div>
+        <div class="floating-hearts" id="hearts5"></div>
+        <div class="shooting-stars" id="shooting5"></div>
+        
+        <h2 class="final-text">Our Love Story Continues...</h2>
+        <p class="final-subtext">You passed every stage — not just here, but in my heart. Every moment with you is a beautiful chapter in our story, and I can't wait to see what the future holds for us. Thank you for being you, and for being mine. ❤</p>
+    </section>
+
+    <script>
+        // Create stars background for all stages
+        function createStars(containerId, count) {
+            const container = document.getElementById(containerId);
+            
+            for (let i = 0; i < count; i++) {
+                const star = document.createElement('div');
+                star.classList.add('star');
+                
+                // Random position and size
+                const size = Math.random() * 3;
+                star.style.width = size + 'px';
+                star.style.height = size + 'px';
+                star.style.left = Math.random() * 100 + 'vw';
+                star.style.top = Math.random() * 100 + 'vh';
+                star.style.animationDelay = Math.random() * 5 + 's';
+                
+                // Random color for stars
+                const colors = ['#ffffff', '#ffb8d9', '#a8d8ff', '#ffccff'];
+                star.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                
+                container.appendChild(star);
+            }
+        }
+
+        // Create shooting stars
+        function createShootingStars(containerId, count) {
+            const container = document.getElementById(containerId);
+            
+            for (let i = 0; i < count; i++) {
+                const star = document.createElement('div');
+                star.classList.add('shooting-star');
+                
+                // Random position and delay
+                star.style.left = Math.random() * 100 + 'vw';
+                star.style.top = Math.random() * 100 + 'vh';
+                star.style.animationDelay = Math.random() * 15 + 's';
+                
+                container.appendChild(star);
+            }
+        }
+
+        // Create floating hearts for all stages
+        function createFloatingHearts(containerId, count) {
+            const container = document.getElementById(containerId);
+            
+            for (let i = 0; i < count; i++) {
+                const heart = document.createElement('div');
+                heart.innerHTML = '💖';
+                heart.classList.add('floating-heart');
+                
+                // Random position and animation
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.top = Math.random() * 100 + 'vh';
+                heart.style.animationDelay = Math.random() * 5 + 's';
+                heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
+                heart.style.opacity = Math.random() * 0.5 + 0.3;
+                
+                container.appendChild(heart);
+            }
+        }
+
+        // Password validation
+        document.getElementById('unlock-btn').addEventListener('click', function() {
+            const passwordInput = document.getElementById('password-input');
+            const message = document.getElementById('lock-message');
+            const correctPassword = "1511"; // Changed to 1511 as requested
+            
+            if (passwordInput.value === correctPassword) {
+                message.innerHTML = "You've unlocked my heart! 💖";
+                message.style.color = "#ffb8d9";
+                
+                // Create floating hearts animation
+                for (let i = 0; i < 20; i++) {
+                    setTimeout(() => {
+                        const heart = document.createElement('div');
+                        heart.innerHTML = '💖';
+                        heart.style.position = 'absolute';
+                        heart.style.left = '50%';
+                        heart.style.top = '50%';
+                        heart.style.fontSize = '24px';
+                        heart.style.opacity = '1';
+                        heart.style.transition = 'all 1s ease-out';
+                        heart.style.zIndex = '100';
+                        document.body.appendChild(heart);
+                        
+                        // Animate heart floating up and fading out
+                        setTimeout(() => {
+                            heart.style.transform = `translate(${Math.random() * 100 - 50}px, -100px)`;
+                            heart.style.opacity = '0';
+                        }, 10);
+                        
+                        // Remove heart after animation
+                        setTimeout(() => {
+                            if (heart.parentNode) {
+                                document.body.removeChild(heart);
+                            }
+                        }, 1000);
+                    }, i * 100);
+                }
+                
+                // Show quiz after delay
+                setTimeout(() => {
+                    document.getElementById('stage1').style.display = 'none';
+                    document.getElementById('stage2').style.display = 'flex';
+                }, 2000);
+            } else {
+                message.innerHTML = "That's not our special date! Try again, silly 😡💔";
+                message.style.color = "#ff6b6b";
+                
+                // Shake animation for wrong password
+                passwordInput.style.animation = 'shake 0.5s';
+                setTimeout(() => {
+                    passwordInput.style.animation = '';
+                }, 500);
+            }
+        });
+
+        // Updated Quiz questions and answers
+        const quizData = [
+            {
+                question: "What were the colors of our dresses when we first met?",
+                options: [
+                    "Black, Black",
+                    "White, Maroon",
+                    "Black, Pink",
+                    "Blue, Black"
+                ],
+                correct: 2
+            },
+            {
+                question: "What was the first movie we watched together?",
+                options: [
+                    "Hit 3",
+                    "Coolie",
+                    "Game Changer",
+                    "OG"
+                ],
+                correct: 2
+            },
+            {
+                question: "What was the first thing you gifted me?",
+                options: [
+                    "Dress",
+                    "Earrings",
+                    "Bangles",
+                    "Chain"
+                ],
+                correct: 3
+            },
+            {
+                question: "What was the first game we played together?",
+                options: [
+                    "Carroms",
+                    "Ludo",
+                    "Chess",
+                    "Truth or Dare"
+                ],
+                correct: 1
+            },
+            {
+                question: "What's the part I love the most about you?",
+                options: [
+                    "Smile",
+                    "Hair",
+                    "Eyes",
+                    "Voice"
+                ],
+                correct: 2
+            }
+        ];
+
+        let currentQuestion = 0;
+        let userAnswers = new Array(quizData.length).fill(null);
+
+        // Initialize quiz
+        function initializeQuiz() {
+            showQuestion(currentQuestion);
+            updateNavigationButtons();
+        }
+
+        // Show specific question
+        function showQuestion(index) {
+            const quizContainer = document.getElementById('quiz-questions');
+            const question = quizData[index];
+            
+            let html = `
+                <div class="question">
+                    <div class="question-text">${index + 1}. ${question.question}</div>
+                    <div class="options">
+            `;
+            
+            question.options.forEach((option, optIndex) => {
+                const isSelected = userAnswers[index] === optIndex;
+                html += `
+                    <div class="option ${isSelected ? 'selected' : ''}" data-question="${index}" data-option="${optIndex}">${option}</div>
+                `;
+            });
+            
+            html += `
+                    </div>
+                </div>
+            `;
+            
+            quizContainer.innerHTML = html;
+            
+            // Add click event to options
+            document.querySelectorAll('.option').forEach(option => {
+                option.addEventListener('click', function() {
+                    const questionIndex = parseInt(this.getAttribute('data-question'));
+                    const optionIndex = parseInt(this.getAttribute('data-option'));
+                    
+                    // Save user's answer
+                    userAnswers[questionIndex] = optionIndex;
+                    
+                    // Remove selected class from all options in this question
+                    document.querySelectorAll(`.option[data-question="${questionIndex}"]`).forEach(opt => {
+                        opt.classList.remove('selected');
+                    });
+                    
+                    // Add selected class to clicked option
+                    this.classList.add('selected');
+                    
+                    // Enable next button if it's not the last question
+                    if (currentQuestion < quizData.length - 1) {
+                        document.getElementById('next-btn').disabled = false;
+                    }
+                });
+            });
+            
+            // Update question counter
+            document.getElementById('question-counter').textContent = `Question ${index + 1} of ${quizData.length}`;
+        }
+
+        // Update navigation buttons state
+        function updateNavigationButtons() {
+            document.getElementById('prev-btn').disabled = currentQuestion === 0;
+            
+            // For next button, enable only if user has selected an answer
+            const hasAnswered = userAnswers[currentQuestion] !== null;
+            document.getElementById('next-btn').disabled = !hasAnswered && currentQuestion < quizData.length - 1;
+            
+            // Change next button text on last question
+            if (currentQuestion === quizData.length - 1) {
+                document.getElementById('next-btn').textContent = 'Submit Quiz';
+            } else {
+                document.getElementById('next-btn').textContent = 'Next';
+            }
+        }
+
+        // Previous button event
+        document.getElementById('prev-btn').addEventListener('click', function() {
+            if (currentQuestion > 0) {
+                currentQuestion--;
+                showQuestion(currentQuestion);
+                updateNavigationButtons();
+            }
+        });
+
+        // Next button event
+        document.getElementById('next-btn').addEventListener('click', function() {
+            if (currentQuestion < quizData.length - 1) {
+                currentQuestion++;
+                showQuestion(currentQuestion);
+                updateNavigationButtons();
+            } else {
+                // Submit quiz
+                submitQuiz();
+            }
+        });
+
+        // Submit quiz
+        function submitQuiz() {
+            let score = 0;
+            const result = document.getElementById('quiz-result');
+            
+            // Check answers
+            quizData.forEach((question, index) => {
+                if (userAnswers[index] === question.correct) {
+                    score++;
+                }
+            });
+            
+            // Display result
+            let message = '';
+            if (score === 5) {
+                message = "You truly know me! 💖";
+                result.style.color = "#ffb8d9";
+                
+                // Show letter after delay
+                setTimeout(() => {
+                    document.getElementById('stage2').style.display = 'none';
+                    document.getElementById('stage3').style.display = 'flex';
+                }, 2000);
+            } else if (score === 4) {
+                message = "Almost there, smarty! Try once more 😏";
+            } else if (score === 3) {
+                message = "Not bad… but do you even remember me? 🤨";
+            } else if (score === 2) {
+                message = "Seriously? I'm heartbroken 😭";
+            } else if (score === 1) {
+                message = "What a fellow! You forgot everything 😤💔";
+            } else {
+                message = "Go revise our memories! 🙄";
+            }
+            
+            result.innerHTML = `You scored ${score}/5. ${message}`;
+            
+            // If not perfect score, reset quiz after delay
+            if (score < 5) {
+                setTimeout(() => {
+                    currentQuestion = 0;
+                    userAnswers.fill(null);
+                    initializeQuiz();
+                    result.innerHTML = '';
+                }, 3000);
+            }
+        }
+
+        // Letter next button
+        document.getElementById('letter-next').addEventListener('click', function() {
+            document.getElementById('stage3').style.display = 'none';
+            document.getElementById('stage4').style.display = 'flex';
+        });
+
+        // Flip cards in gallery
+        
+        
+        document.querySelectorAll('.memory-card').forEach(card => {
+            card.addEventListener('click', function() {
+                this.classList.toggle('flipped');
+                
+                // Check if all cards are flipped
+                const allCards = document.querySelectorAll('.memory-card');
+                const allFlipped = Array.from(allCards).every(card => card.classList.contains('flipped'));
+                
+                if (allFlipped) {
+                    setTimeout(() => {
+                        document.getElementById('stage4').style.display = 'none';
+                        document.getElementById('final-message').style.display = 'flex';
+                    }, 1000);
+                }
+            });
+        });
+
+        // Initialize the page
+        window.onload = function() {
+            // Create stars, shooting stars, and hearts for each stage
+            createStars('stars1', 150);
+            createStars('stars2', 150);
+            createStars('stars3', 150);
+            createStars('stars4', 150);
+            createStars('stars5', 150);
+            
+            createShootingStars('shooting1', 5);
+            createShootingStars('shooting2', 5);
+            createShootingStars('shooting3', 5);
+            createShootingStars('shooting4', 5);
+            createShootingStars('shooting5', 5);
+            
+            createFloatingHearts('hearts1', 15);
+            createFloatingHearts('hearts2', 15);
+            createFloatingHearts('hearts3', 15);
+            createFloatingHearts('hearts4', 15);
+            createFloatingHearts('hearts5', 15);
+            
+            initializeQuiz();
+            
+            // Add shake animation for wrong password
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes shake {
+                    0%, 100% { transform: translateX(0); }
+                    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+                    20%, 40%, 60%, 80% { transform: translateX(5px); }
+                }
+            `;
+            document.head.appendChild(style);
+        };
+    </script>
+</body>
+</html>
